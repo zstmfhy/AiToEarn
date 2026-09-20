@@ -183,6 +183,7 @@ services:
     image: nginx:alpine
     container_name: aitoearn-nginx
     restart: unless-stopped
+    entrypoint: ["nginx", "-g", "daemon off;"]
     depends_on:
       aitoearn-web:
         condition: service_healthy
